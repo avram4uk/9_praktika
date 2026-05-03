@@ -41,7 +41,7 @@ children* init() {
 	return ch;
 }
 
-void print(children a[SIZE], string child_name) {
+void print(children a[SIZE], string child_name) {  //Вывести все данные по конкретному ученику
 	for (int i = 0; i < SIZE; i++) {
 		if (a[i].name == child_name) {
 			printf("\n%s %c %d %d %s\n", a[i].name, a[i].gender, a[i].height, a[i].year_of_birth, a[i].month_of_birth);
@@ -49,7 +49,7 @@ void print(children a[SIZE], string child_name) {
 	}
 }
 
-float mid(children b[SIZE]) {
+float mid(children b[SIZE]) {  //Вывести средний рост мальчиков
 	float count = 0;
 	short size_new = SIZE;
 	for (int i = 0; i < SIZE; i++) {
@@ -61,7 +61,7 @@ float mid(children b[SIZE]) {
 	return count / size_new;
 }
 
-void tallest(children c[SIZE]) {
+void tallest(children c[SIZE]) {  //Перенести в отдельный массив 5 самых высоких девочек
 	extern string tall[];
 	int max[SIZE] = { 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0 };
 	for (int i = 0; i < SIZE; i++) {
@@ -87,11 +87,10 @@ void tallest(children c[SIZE]) {
 				break;
 			}
 		}
-		//cout << endl << tall[19 - j];
 	}
 }
 
-void sorted(children d[SIZE]) {
+void sorted(children d[SIZE]) {  //Отсортировать список учеников в лексикографическом порядке
 	extern string list_of_names[];
 	for (int i = 0; i < SIZE; i++) {
 		list_of_names[i] = d[i].name;
@@ -135,7 +134,7 @@ void change(children& e) { //Функция изменяет поля струк
 	}
 }
 
-void same(children f[SIZE], string month) {
+void same(children f[SIZE], string month) {  //Функция для определения детей с одинаковым днём рождения
 	extern string same_month[];
 	int j = 0;
 	for (int i = 0; i < SIZE; i++) {
